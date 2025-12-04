@@ -24,8 +24,7 @@ class ActorManager:
         cursor = self._connection.execute(
             "SELECT * FROM actors"
         )
-        return [
-            Actor(*row) for row in cursor]
+        return [Actor(*row) for row in cursor]
 
     def delete(self, id: int) -> None:
         self._connection.execute(
